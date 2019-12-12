@@ -13,9 +13,13 @@ This is pure client side Java script application. It has basic functionalities w
 Dependencies and third party library : 
 
 Using jQuery and Java script for Dom manipulation.
+
 Using Bootstrap - front-end component library for layout formation. 
-Using Material UI CSS framework – Materialize for styling the application
+
+Using Material UI CSS framework – Materialize for styling the application. 
+
 Using font-awesome for icons used in the application.
+
 For alerts using SweetAlert which makes popup messages easy and pretty.
 
 
