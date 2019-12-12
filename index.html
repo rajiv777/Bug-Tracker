@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bug Tracker</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="data.css">
+</head>
+
+<body class="has-fixed-sidenav">
+    <div class="nav navbar-fixed">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header col-md-3">
+            <div class="nav-title">
+                Bug Tracker
+            </div>
+        </div>
+        <div class="col-md-4 search col-xs-12">
+            <input type="text" id="search-box" placeholder="Search...">
+            <span class="fa fa-search primary"></span>           
+        </div>
+        <div class="nav-btn">
+            <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+
+        <div class="nav-links pull-right">
+            <a class="primary all" name="all-bugs" href="">All bugs</a>
+            <a class="primary all-resolved" name="all-resolved">Resolved bugs</a>
+            <a class="primary all-open" name="all-open">Open bugs</a>
+        </div>
+    </div>
+    <main class="row">
+        <div class="col-md-12 col-xs-12 data-container">
+            <div class="col-xs-12 col-md-6" id="main">
+                <h2 class="header">List of bugs</h2>
+            </div>
+            <!-- //floating action button to add bugs -->
+            <a class="btn-floating btn-large waves-effect waves-light primary add-btn">
+                <i class="material-icons">+</i>
+            </a>
+
+            <form id="add-form" class="col-md-7 add-form no-padding hide" name="add-form" onsubmit="validateMyForm()">
+                <label class="hide mandatory">This is mandatory</label>
+                <h3 class="title-form">Add Bug
+                    <a class="waves-effect waves-light close-btn pull-right primary">X</a>
+                </h3>
+                <h3 class="title-form-edit hide">Edit Bug
+                    <a class="waves-effect waves-light close-btn pull-right primary">X</a>
+                </h3>
+                <div class="col-md-12 no-padding col-xs-12">
+                    <div class="input-field col s6">
+                        <input id="bug_name" type="text" class="validate" required>
+                        <label for="bug_name">Bug Name <span>*</span></label>
+                        <span class="helper-text" data-error="This is mandatory field"></span>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="assigned" type="text" class="validate">
+                        <label for="assigned">Assigned To</label>
+                    </div>
+                </div>
+                <div class="col-md-12 no-padding">
+                    <div class="input-field col s6">
+                        <input id="severity" type="text" class="validate" required>
+                        <label for="severity">Priority <span>*</span></label>
+                        <span class="helper-text" data-error="This is mandatory field"></span>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="status" type="text" class="">
+                        <label for="status">Status</label>
+                    </div>
+                </div>
+                <!-- <div class="input-field col s12">
+                    <select id="severity" class="validate" name = "severity" required>
+                        <option value="" disabled selected>Choose Priority</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div> -->
+                <div class="input-field col s12">
+                    <textarea id="bug_desc" type="text" class="validate materialize-textarea" required></textarea>
+                    <label for="bug_desc">Description<span>*</span></label>
+                    <span class="helper-text" data-error="This is mandatory field"></span>
+                </div>
+                <div class="input-field col s12 hide">
+                    <textarea id="notes" type="text" class="validate materialize-textarea" required></textarea>
+                    <label for="notes">Notes<span>*</span></label>
+                    <span class="helper-text" data-error="This is mandatory field"></span>
+                </div>
+                <div class="col-md-3 no-padding pull-right">
+                    <button class="col-md-12 waves-effect waves-light btn submit-btn" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="hide text-center no-result col-md-12">No Results Found</div>
+    </main>
+
+    <footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script> -->
+        <script src="data.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </footer>
+</body>
+
+</html>
